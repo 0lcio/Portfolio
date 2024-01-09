@@ -48,7 +48,8 @@ html {
     -webkit-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
 }
 
 body {
@@ -85,6 +86,7 @@ body {
 }
   
 .intro-name {
+    font-size: 30px;
     font-weight: 300;
     margin-top: 80px;
 }
@@ -752,19 +754,41 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .content_box_404 h1{
-    font-size: 100px;
+    font-size: 80px;
+}
+
+.content_box_404 h2{
+    font-size: 20px;
 }
 
 .message_404{
-    margin: 60px;
+    margin: 40px;
     line-height: 1.5;
+    opacity: 0.5;
+    width: 80vw;
 }
 
 .image_404{
     margin-top: 5px;
     height: 30px;
+}
+
+@media(min-width: 1280px) {
+    .content_box_404 h1{
+        font-size: 100px;
+    }
+    
+    .message_404{
+        margin: 60px;
+        line-height: 1.5;
+    }
+    
+    .image_404{
+        margin-top: 5px;
+        height: 30px;
+    }
 }
