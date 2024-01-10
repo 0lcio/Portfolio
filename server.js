@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Parse incoming JSON payloads
+app.use(bodyParser.json());
 // Serve static files (HTML, CSS, JS) from the root directory
 app.use(express.static(path.join(__dirname)));
 
@@ -37,7 +39,7 @@ app.post('/webhook', (req, res) => {
   if (payload && payload.ref === 'refs/heads/master') {
     // Execute the update script
     const { exec } = require('child_process');
-    exec('/path/to/your/project/update.sh', (error, stdout, stderr) => {
+    exec('/portfolio/Portfolio/update.sh', (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing update script: ${error}`);
         res.status(500).send('Internal Server Error');
