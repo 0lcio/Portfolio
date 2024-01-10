@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden
+    overflow: hidden;
 }
 
 main,
@@ -302,17 +302,17 @@ body {
 .siteHeader_title {
     margin: -0.1em 0 0 -0.04em;
     font-weight: 200;
-    font-size: 25px;
+    font-size: 8vw;
 }
 
 
 .siteHeader_label {
     margin-top: 5px;
     font-weight: 200;
-    font-size: 12px;
+    font-size: 3.5vw;
 }
 
-@media(min-width: 1280px) {
+@media(min-width: 720px) {
     .siteHeader_title {
         font-size: 60px
     }
@@ -324,7 +324,7 @@ body {
 
 .siteHeader_nav {
     margin-top: 30px;
-    font-size: 13px;
+    font-size: 2.5vw;
 }
 
 .siteHeader_nav ol li a.active {
@@ -365,7 +365,7 @@ body {
     }
 }
 
-@media(min-width: 1280px) {
+@media(min-width: 720px) {
     .siteHeader_nav {
         margin-top: 60px;
         font-size: 15px;
