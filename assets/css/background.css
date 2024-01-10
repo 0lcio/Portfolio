@@ -11,3 +11,9 @@ canvas {
     mix-blend-mode: difference;
     pointer-events: none;
 }
+
+@media(max-width: 720px) {
+    canvas {
+        width: 200vw;
+    }
+}
