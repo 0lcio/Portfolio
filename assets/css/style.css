@@ -32,6 +32,7 @@ ul {
 
 body {
     font-family: 'Roboto Mono', monospace;
+    -webkit-background-color: #0D0D0D;
     background-color: #0D0D0D;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
