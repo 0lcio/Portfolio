@@ -32,7 +32,7 @@ app.use((req, res) => {
 });
 
 // GitHub Webhook endpoint
-app.post('/webhook', (req, res) => {
+app.post('/', (req, res) => {
   const payload = req.body;
 
   // Verify that the event is a push to the master branch
