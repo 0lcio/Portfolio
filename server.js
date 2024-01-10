@@ -11,7 +11,7 @@ app.post('/', (req, res) => {
   const payload = req.body;
   console.log('Received GitHub Webhook:', req.body);
   console.log('Received GitHub payload:', payload);
-  // Verify that the event is a push to the master branch
+  // Verify that the event is a push to the main branch
   if (payload.ref === 'refs/heads/main') {
     // Execute the update script
     const { exec } = require('child_process');
