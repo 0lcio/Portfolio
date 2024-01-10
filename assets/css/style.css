@@ -334,8 +334,8 @@ body {
 }
 
 .siteHeader_nav {
-    margin-top: 30px;
-    font-size: 2.5vw;
+    margin-top: 40px;
+    font-size: 3vw;
 }
 
 .siteHeader_nav ol li a.active {
@@ -380,6 +380,12 @@ body {
     .siteHeader_nav {
         margin-top: 60px;
         font-size: 15px;
+    }
+}
+
+@media(max-width: 360px) {
+    .siteHeader_nav {
+        font-size: 5vw;
     }
 }
 
