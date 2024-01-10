@@ -30,6 +30,7 @@ app.post('/', (req, res) => {
   }
 });
 
+
 // Serve static files (HTML, CSS, JS) from the root directory
 app.use(express.static(path.join(__dirname)));
 
