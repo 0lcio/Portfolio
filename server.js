@@ -15,7 +15,7 @@ app.post('/', (req, res) => {
   if (payload.ref === 'refs/heads/main') {
     // Execute the update script
     const { exec } = require('child_process');
-    exec('/portfolio/Portfolio/update.sh', (error, stdout, stderr) => {
+    exec('/home/ubuntu/portfolio/update.sh', (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing update script: ${error}`);
         res.status(500).send('Internal Server Error');
