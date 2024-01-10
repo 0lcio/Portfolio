@@ -302,18 +302,6 @@ body {
     min-height: 100%;
 }
 
-.text-btn {
-    transition-property: opacity;
-    transition-duration: .4s;
-    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-}
-
-@media(hover: hover) {
-    .text-btn:hover {
-        opacity: .25;
-    }
-}
-
 .siteHeader {
     position: fixed;
     z-index: 10;
@@ -413,13 +401,14 @@ body {
 
 .home {
     position: absolute;
-    right: calc(var(--pad)*2);
-    bottom: calc(var(--pad)*2);
+    right: 0;
+    bottom: 0;
     white-space: nowrap;
 }
 
 .home_aboutme {
     line-height: 1.5;
+    padding: calc(var(--pad)*2) calc(var(--pad)*2);
 }
 
 .home_aboutme span {
