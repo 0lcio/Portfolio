@@ -36,7 +36,7 @@ app.post('/', (req, res) => {
   const payload = req.body;
 
   // Verify that the event is a push to the master branch
-  if (payload && payload.ref === 'refs/heads/main') {
+  if (payload.ref === 'refs/heads/main') {
     // Execute the update script
     const { exec } = require('child_process');
     exec('/portfolio/Portfolio/update.sh', (error, stdout, stderr) => {
