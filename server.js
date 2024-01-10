@@ -6,6 +6,31 @@ const port = process.env.PORT || 3000;
 
 // Parse incoming JSON payloads
 app.use(bodyParser.json());
+// GitHub Webhook endpoint
+app.post('/', (req, res) => {
+  const payload = req.body;
+
+  // Verify that the event is a push to the master branch
+  if (payload.ref === 'refs/heads/main') {
+    // Execute the update script
+    const { exec } = require('child_process');
+    exec('/portfolio/Portfolio/update.sh', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing update script: ${error}`);
+        res.status(500).send('Internal Server Error');
+      } else {
+        console.log('GitHub Webhook Received:', payload);
+        console.log('Update successful:', stdout);
+        res.status(200).send('Webhook received and update successful');
+      }
+    });
+  } else {
+    res.status(200).send('Webhook received, but no action taken');
+  }
+});
+
+
+
 // Serve static files (HTML, CSS, JS) from the root directory
 app.use(express.static(path.join(__dirname)));
 
@@ -29,29 +54,6 @@ app.get('/contact', (req, res) => {
 // Handle 404 page not found
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'pages', '404.html'));
-});
-
-// GitHub Webhook endpoint
-app.post('/', (req, res) => {
-  const payload = req.body;
-
-  // Verify that the event is a push to the master branch
-  if (payload.ref === 'refs/heads/main') {
-    // Execute the update script
-    const { exec } = require('child_process');
-    exec('/portfolio/Portfolio/update.sh', (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error executing update script: ${error}`);
-        res.status(500).send('Internal Server Error');
-      } else {
-        console.log('GitHub Webhook Received:', payload);
-        console.log('Update successful:', stdout);
-        res.status(200).send('Webhook received and update successful');
-      }
-    });
-  } else {
-    res.status(200).send('Webhook received, but no action taken');
-  }
 });
 
 // Start the server
