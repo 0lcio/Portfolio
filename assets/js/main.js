@@ -152,7 +152,7 @@ homeLink.addEventListener('click', function(event) {
       var bgColor = checkbox.checked ? '#E5E5E5' : '#0D0D0D';
 
       // Use GSAP to animate background color change
-      gsap.to('html', { backgroundColor: bgColor, duration: 0.7 });
+      gsap.to('body', { backgroundColor: bgColor, duration: 0.7 });
     }
 
     // Function to toggle the switch state
