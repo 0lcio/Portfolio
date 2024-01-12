@@ -403,14 +403,13 @@ body {
 
 .home {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: calc(var(--pad)*2);
+    bottom: calc(var(--pad)*2);
     white-space: nowrap;
 }
 
 .home_aboutme {
     line-height: 1.5;
-    padding: calc(var(--pad)*2) calc(var(--pad)*2);
 }
 
 .home_aboutme span {
@@ -419,8 +418,6 @@ body {
 
 .info {
     position: absolute;
-    left: calc(var(--pad)*2);
-    bottom: calc(var(--pad)*2);
     white-space: nowrap;
 }
 

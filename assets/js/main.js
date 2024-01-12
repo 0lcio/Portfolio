@@ -21,7 +21,7 @@ if (!hasAnimationPlayed) {
     .fromTo(square, { opacity: 1 }, { opacity: 0, duration: 1 }, "<")
     .eventCallback('onComplete', () => {
       // Set a flag in session storage indicating that the animation has played
-      //sessionStorage.setItem('animationPlayed', true);
+      sessionStorage.setItem('animationPlayed', true);
     });
 } else {
   // Add the homepage class if the animation has played before
