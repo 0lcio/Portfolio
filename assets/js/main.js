@@ -8,7 +8,6 @@ const hasAnimationPlayed = sessionStorage.getItem('animationPlayed');
 if (!hasAnimationPlayed) {
   let tl = gsap.timeline();
   gsap.to(".center", { opacity: 1, duration: 0 });
-  // First square animation.
   tl.fromTo(square, { opacity: 0 }, { opacity: 1, duration: 0.5 })
     .fromTo(introName, { opacity: 1 }, { opacity: 0, duration: 0.7 }, "+=1.1")
     .fromTo(introSurname, { opacity: 1 }, { opacity: 0, duration: 0.7 }, "<") // Start when the previous tween begins.
@@ -22,7 +21,7 @@ if (!hasAnimationPlayed) {
     .fromTo(square, { opacity: 1 }, { opacity: 0, duration: 1 }, "<")
     .eventCallback('onComplete', () => {
       // Set a flag in session storage indicating that the animation has played
-      sessionStorage.setItem('animationPlayed', true);
+      //sessionStorage.setItem('animationPlayed', true);
     });
 } else {
   // Add the homepage class if the animation has played before
