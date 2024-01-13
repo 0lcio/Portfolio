@@ -558,6 +558,18 @@ input:checked + .slider:before {
     height: 30px;
 }
 
+@media(max-width: 540px) {
+    .page .skills_page {
+        font-size: 3vw;
+    }
+    .skills_page div {
+        margin-top: 20px;
+    }
+    .skills_inline li {
+        margin-top: 5px;
+    }
+}
+
 
 
 /*------------------*/
