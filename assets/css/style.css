@@ -422,6 +422,12 @@ body {
     }
 }
 
+@media(max-width: 480px) {
+    .home_aboutme {
+        font-size: 4vw;
+    }
+}
+
 .switch {
     line-height: 0.1;
     position: relative;
