@@ -72,6 +72,8 @@ body {
 }
   
 .square {
+    width: 270px;
+    height: 270px;
     position: relative;
     display: inline-block;
     display: flex;
