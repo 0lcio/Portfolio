@@ -379,7 +379,7 @@ body {
     }
 }
 
-@media(max-width: 360px) {
+@media(max-width: 540px) {
     .siteHeader_nav {
         font-size: 6vw;
     }
