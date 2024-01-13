@@ -561,6 +561,7 @@ input:checked + .slider:before {
 @media(max-width: 540px) {
     .page .skills_page {
         font-size: 3vw;
+        font-weight: 200;
     }
     .skills_page div {
         margin-top: 20px;
