@@ -711,6 +711,44 @@ input:checked + .slider:before {
     }
 } 
 
+
+
+/*-----------------*/
+/* Contact section */
+/*-----------------*/
+
+.contact-info {
+    position: fixed;
+    right: calc(var(--pad)*2);
+    bottom: calc(var(--pad)*2);
+    white-space: nowrap;
+}
+
+.contact-item {
+    margin: 20px;
+    line-height: 2;
+}
+
+.contact-item img{
+    margin-right: 12px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+@media(max-width: 720px) {
+    .contact-info {
+        font-weight: 200;
+    }
+}
+
+@media(max-width: 540px) {
+    .contact-item {
+        display: flex;
+    }
+}
+
+
+
 /*----------*/
 /* 404 Page */
 /*----------*/
