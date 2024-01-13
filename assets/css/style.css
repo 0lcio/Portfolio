@@ -255,6 +255,7 @@ body {
 
 
 .theme {
+    margin-left: 3px;
     position: fixed;
     z-index: 10;
     left: calc(var(--pad) - .15em);
@@ -284,6 +285,59 @@ body {
     cursor: not-allowed;
 }
 
+.switch {
+    line-height: 0.1;
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    height: 12px;
+  }
+   
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E5E5E5;
+    border: 1px solid #E5E5E5;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #0D0D0D;
+    border: 1px solid #0D0D0D;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+  
+input:checked + .slider {
+    background-color: #E5E5E5;
+    border: 1px solid #E5E5E5;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(48px);
+    -ms-transform: translateX(48px);
+    transform: translateX(31px);
+    background-color: #0D0D0D;
+    border: 1px solid #0D0D0D;
+}
+  
+.slider.round {
+    border-radius: 50px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+} 
+
 .content {
     position: fixed;
     z-index: 2;
@@ -297,6 +351,12 @@ body {
     position: relative;
     min-height: 100%;
 }
+
+
+
+/*-------------------*/
+/* Site header + nav */
+/*-------------------*/
 
 .siteHeader {
     position: fixed;
@@ -401,6 +461,12 @@ body {
     background: transparent; /* Optional: Hide the background */
 }
 
+
+
+/*--------------*/
+/* Home section */
+/*--------------*/
+
 .home {
     position: fixed;
     right: calc(var(--pad)*2);
@@ -427,59 +493,6 @@ body {
         font-size: 3.5vw;
     }
 }
-
-.switch {
-    line-height: 0.1;
-    position: relative;
-    display: inline-block;
-    width: 43px;
-    height: 12px;
-  }
-   
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #E5E5E5;
-    border: 1px solid #E5E5E5;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 8px;
-    width: 8px;
-    background-color: #0D0D0D;
-    border: 1px solid #0D0D0D;
-    -webkit-transition: .5s;
-    transition: .5s;
-  }
-  
-  input:checked + .slider {
-    background-color: #E5E5E5;
-    border: 1px solid #E5E5E5;
-  }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(48px);
-    -ms-transform: translateX(48px);
-    transform: translateX(31px);
-    background-color: #0D0D0D;
-    border: 1px solid #0D0D0D;
-  }
-  
-  .slider.round {
-    border-radius: 50px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  } 
 
 
 
