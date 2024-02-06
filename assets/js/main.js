@@ -118,14 +118,14 @@ homeLink.addEventListener('click', function(event) {
   }, 10); // Adjust the delay as needed
 });
 
-const dateDiv = document.getElementById('utc-time');
+const timeDiv = document.querySelector('.utc-time');
 
-function myDateFunction() {
+function myTimeFunction() {
   const now = new Date();
-  const nowStr = now.toLocaleString('en-US');
-  dateDiv.innerHTML = nowStr;
+  const timeStr = now.toLocaleTimeString('en-US');
+  timeDiv.innerHTML = timeStr;
 }
-setInterval(myDateFunction, 1000);
+setInterval(myTimeFunction, 1000);
 
 
   document.addEventListener('DOMContentLoaded', function () {
