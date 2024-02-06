@@ -118,25 +118,29 @@ homeLink.addEventListener('click', function(event) {
   }, 10); // Adjust the delay as needed
 });
 
-  
-    function updateTimes() {
-      fetch('https://worldtimeapi.org/api/timezone/Europe/Rome')
-          .then(response => response.json())
-          .then(data => {
-              const dateTime = new Date(data.datetime);
-              const formattedTime = dateTime.toLocaleTimeString();
+function updateTimes() {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  fetch(`https://worldtimeapi.org/api/timezone/${timezone}`)
+    .then(response => response.json())
+    .then(data => {
+      const dateTime = new Date(data.datetime);
+      const formattedTime = dateTime.toLocaleTimeString();
 
-              // Update the content of the element
-              document.querySelector('.utc-time').textContent = formattedTime;
-          })
-          .catch(error => {
-              console.error('Error fetching time data:', error);
-          });
-  }
+      // Update the content of the element
+      document.querySelector('.utc-time').textContent = formattedTime;
+    })
+    .catch(error => {
+      console.error('Error fetching time data:', error);
+    });
+}
 
+updateTimes();
+setInterval(updateTimes, 1000);
+
+document.addEventListener('DOMContentLoaded', function () {
   updateTimes();
-  setInterval(updateTimes, 1000);
-  
+});
+
   document.addEventListener('DOMContentLoaded', function () {
     // Get the switch element and the checkbox
     var switchElement = document.querySelector('.switch');
