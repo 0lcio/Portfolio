@@ -100,45 +100,33 @@ $(document).ready(function () {
     }
   }
   
-    document.addEventListener('DOMContentLoaded', function() {
-      updateAge();
-    });
-
-    // Assuming you have an <a> element with class "_text" and data-page attribute set to "home"
-  const homeLink = document.querySelector('a._text[data-page="home"]');
-
-  homeLink.addEventListener('click', function(event) {
-    // Prevent the default behavior of the link (e.g., preventing navigation)
-    event.preventDefault();
-
-    // Call the updateAge function after a short delay
-    setTimeout(function() {
-        updateAge();
-        // Optionally, you can perform other actions related to navigating to the home page here
-    }, 10); // Adjust the delay as needed
+  document.addEventListener('DOMContentLoaded', function() {
+    updateAge();
   });
 
-  function updateTimes() {
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    fetch(`https://worldtimeapi.org/api/timezone/${timezone}`)
-      .then(response => response.json())
-      .then(data => {
-        const dateTime = new Date(data.datetime);
-        const formattedTime = dateTime.toLocaleTimeString();
+  // Assuming you have an <a> element with class "_text" and data-page attribute set to "home"
+const homeLink = document.querySelector('a._text[data-page="home"]');
 
-        // Update the content of the element
-        document.querySelector('.utc-time').textContent = formattedTime;
-      })
-      .catch(error => {
-        console.error('Error fetching time data:', error);
-      });
-  }
+homeLink.addEventListener('click', function(event) {
+  // Prevent the default behavior of the link (e.g., preventing navigation)
+  event.preventDefault();
 
-  updateTimes();
-
-document.addEventListener('DOMContentLoaded', function () {
-  updateTimes();
+  // Call the updateAge function after a short delay
+  setTimeout(function() {
+      updateAge();
+      // Optionally, you can perform other actions related to navigating to the home page here
+  }, 10); // Adjust the delay as needed
 });
+
+const dateDiv = document.getElementById('utc-time');
+
+function myDateFunction() {
+  const now = new Date();
+  const nowStr = now.toLocaleString('en-US');
+  dateDiv.innerHTML = nowStr;
+}
+setInterval(myDateFunction, 1000);
+
 
   document.addEventListener('DOMContentLoaded', function () {
     // Get the switch element and the checkbox
