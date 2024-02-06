@@ -100,42 +100,41 @@ $(document).ready(function () {
     }
   }
   
-  document.addEventListener('DOMContentLoaded', function() {
-    updateAge();
+    document.addEventListener('DOMContentLoaded', function() {
+      updateAge();
+    });
+
+    // Assuming you have an <a> element with class "_text" and data-page attribute set to "home"
+  const homeLink = document.querySelector('a._text[data-page="home"]');
+
+  homeLink.addEventListener('click', function(event) {
+    // Prevent the default behavior of the link (e.g., preventing navigation)
+    event.preventDefault();
+
+    // Call the updateAge function after a short delay
+    setTimeout(function() {
+        updateAge();
+        // Optionally, you can perform other actions related to navigating to the home page here
+    }, 10); // Adjust the delay as needed
   });
 
-  // Assuming you have an <a> element with class "_text" and data-page attribute set to "home"
-const homeLink = document.querySelector('a._text[data-page="home"]');
+  function updateTimes() {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    fetch(`https://worldtimeapi.org/api/timezone/${timezone}`)
+      .then(response => response.json())
+      .then(data => {
+        const dateTime = new Date(data.datetime);
+        const formattedTime = dateTime.toLocaleTimeString();
 
-homeLink.addEventListener('click', function(event) {
-  // Prevent the default behavior of the link (e.g., preventing navigation)
-  event.preventDefault();
+        // Update the content of the element
+        document.querySelector('.utc-time').textContent = formattedTime;
+      })
+      .catch(error => {
+        console.error('Error fetching time data:', error);
+      });
+  }
 
-  // Call the updateAge function after a short delay
-  setTimeout(function() {
-      updateAge();
-      // Optionally, you can perform other actions related to navigating to the home page here
-  }, 10); // Adjust the delay as needed
-});
-
-function updateTimes() {
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  fetch(`https://worldtimeapi.org/api/timezone/${timezone}`)
-    .then(response => response.json())
-    .then(data => {
-      const dateTime = new Date(data.datetime);
-      const formattedTime = dateTime.toLocaleTimeString();
-
-      // Update the content of the element
-      document.querySelector('.utc-time').textContent = formattedTime;
-    })
-    .catch(error => {
-      console.error('Error fetching time data:', error);
-    });
-}
-
-updateTimes();
-setInterval(updateTimes, 1000);
+  updateTimes();
 
 document.addEventListener('DOMContentLoaded', function () {
   updateTimes();
