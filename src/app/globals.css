@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-roboto-mono), Arial, Helvetica, sans-serif;
+  /* Nascondi la barra di scorrimento */
+  overflow: hidden;  
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: scroll; /* Permetti lo scorrimento */
+  -webkit-overflow-scrolling: touch; /* Abilita lo scrolling fluido su iOS */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;  /* Nascondi la barra di scorrimento su Webkit (Chrome, Safari, etc.) */
+}
