@@ -11,12 +11,12 @@ export default function Home() {
   }
 
   return (
-    <div className=" text-end w-48 font-light text-sm md:text-base">
-      <p>{age} y/o born in Pavia, Italy.</p>
+    <div className="text-end w-52 font-light text-sm md:text-base transition">
+      <p className="bg-[#0a0a0a]/85">{age} y/o born in Pavia, Italy.</p>
       <p>&nbsp;</p>
-      <p className="">Driven by an overwhelming curiosity, i am constantly pursuing new challenges related to the tech industry.</p>
+      <p className="bg-[#0a0a0a]/85">Driven by an overwhelming curiosity, i am constantly pursuing new challenges related to the tech industry.</p>
       <p>&nbsp;</p>
-      <p className="">Currently in the 3rd year of B.S. degree program in Computer Science at the University of Milan-Bicocca.</p>
+      <p className="bg-[#0a0a0a]/85">Currently in the 3rd year of B.S. degree in Computer Science at the University of Milan-Bicocca.</p>
     </div>
   );
 }

@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const currentPath = usePathname();
   return (
-    <nav className="grid col-auto gap-2 pt-10 w-56 font-light">
+    <nav className="grid col-auto gap-2 pt-10 w-1 font-light">
       <Link
         href="/"
         className={
           currentPath === "/"
-            ? "underline hover:text-gray-300"
-            : "hover:text-gray-300"
+            ? "underline hover:text-gray-300 bg-[#0a0a0a]/85"
+            : "hover:text-gray-300 bg-[#0a0a0a]/85"
         }
       >
         Home
@@ -21,8 +21,8 @@ export default function Navbar() {
         href="/skills"
         className={
           currentPath === "/skills"
-            ? "underline hover:text-gray-300"
-            : "hover:text-gray-300"
+            ? "underline hover:text-gray-300 bg-[#0a0a0a]/85"
+            : "hover:text-gray-300 bg-[#0a0a0a]/85"
         }
       >
         Skills
@@ -31,8 +31,8 @@ export default function Navbar() {
         href="/projects"
         className={
           currentPath === "/projects"
-            ? "underline hover:text-gray-300"
-            : "hover:text-gray-300"
+            ? "underline hover:text-gray-300 bg-[#0a0a0a]/85"
+            : "hover:text-gray-300 bg-[#0a0a0a]/85"
         }
       >
         Projects
@@ -41,8 +41,8 @@ export default function Navbar() {
         href="/contact"
         className={
           currentPath === "/contact"
-            ? "underline hover:text-gray-300"
-            : "hover:text-gray-300"
+            ? "underline hover:text-gray-300 bg-[#0a0a0a]/85"
+            : "hover:text-gray-300 bg-[#0a0a0a]/85"
         }
       >
         Contact
