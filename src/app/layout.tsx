@@ -26,7 +26,6 @@ export default function HomeLayout({
       <body className={robotoMono.variable}>
       <Background />
         <div className="relative flex items-center justify-center px-5 pt-5 md:px-10 md:pt-10">
-          <Time />
           {/* <div className="absolute bottom-16 left-0 -rotate-90 px-3 bg-[#0a0a0a]">
             <p>Toggle</p>
           </div> */}
@@ -36,6 +35,7 @@ export default function HomeLayout({
               <p className="md:text-lg text-zinc-600 bg-[#0a0a0a]/85">Full-Stack Developer</p>
               <Navbar />
             </div>
+            <Time />
             <div className="absolute bottom-4 right-10 md:bottom-8 md:right-20">
               <Transition>{children}</Transition>
             </div>
